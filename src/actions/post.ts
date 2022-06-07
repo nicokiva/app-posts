@@ -28,9 +28,9 @@ export const changeVisiblePostsRange = () => ({
 });
 
 export const fetchPosts = () => {
-    return async (dispatch: any) => {
+    return async (dispatch: (arg0: { type: string; payload?: { posts: Post[]; }; }) => void) => {
         dispatch(startGettingPostsAction());
         const posts = await fetchPostsService();
-        dispatch(endGettingPostsAction(posts));
+        dispatch(endGettingPostsAction(posts || []));
     };
 };

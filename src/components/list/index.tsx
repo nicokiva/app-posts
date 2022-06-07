@@ -6,7 +6,7 @@ import Card from '../card';
 import ViewMore from './viewMore';
 import ViewPrevious from './viewPrevious';
 
-const List = () => {
+const List: React.FC = () => {
     const { visiblePosts, isLoading, morePages } = useSelector<PostsReducerStateType, PostsReducerStateType>((store: PostsReducerStateType) => store);
     const dispatch = useDispatch();
 
@@ -15,6 +15,10 @@ const List = () => {
             return;
         }
 
+        /*
+        if not casting as any, fails because dispatch expects AnyAction which is an object,
+        not a function, but the function works as expected.
+        */
         dispatch(fetchPosts() as any);
     }, [dispatch]);
 

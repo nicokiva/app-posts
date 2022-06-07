@@ -2,7 +2,7 @@ import React from 'react';
 import { Post } from "../../services/post";
 import Container from './container';
 
-const Card = ({ post }: { post: Post }): JSX.Element => (
+const Card: React.FC<{ post: Post }> = ({ post }): JSX.Element => (
     <Container>
         <header>
             {post.title}

@@ -1,24 +1,9 @@
 import React from 'react';
-import Container from '../card/container';
-import { useDispatch } from 'react-redux';
 import { showNextPage } from '../../actions/post';
+import PaginatorBase from './paginatorBase';
 
-const ViewMore = (): JSX.Element => {
-    const dispatch = useDispatch();
-
-    const handleClick = () => {
-        dispatch(showNextPage())    
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth',
-        });
-    };
-
-    return (
-        <Container className="view-action view-more">
-            <button onClick={handleClick}>{"View more >"}</button>
-        </Container>
-    )
-};
+const ViewMore: React.FC = (): JSX.Element => (
+    <PaginatorBase text="View More >" onClick={showNextPage} />
+);
 
 export default ViewMore;

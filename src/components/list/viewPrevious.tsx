@@ -1,20 +1,9 @@
 import React from 'react';
-import Container from '../card/container';
-import { useDispatch } from 'react-redux';
 import { showPreviousPage } from '../../actions/post';
+import PaginatorBase from './paginatorBase';
 
-const ViewPrevious = (): JSX.Element => {
-    const dispatch = useDispatch();
-    
-    const handleClick = () => {
-        dispatch(showPreviousPage());
-    };
-
-    return (
-        <Container className="view-action view-previous">
-            <button onClick={handleClick}>{"< View Less"}</button>
-        </Container>
-    )
-};
+const ViewPrevious: React.FC = (): JSX.Element => (
+    <PaginatorBase text="< View Previous" onClick={showPreviousPage} />
+);
 
 export default ViewPrevious;
