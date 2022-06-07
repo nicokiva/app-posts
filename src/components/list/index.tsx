@@ -23,7 +23,7 @@ const List: React.FC = () => {
     }, [dispatch]);
 
     if (isLoading) {
-        return <>Loading...</>;
+        return <div className="lds-circle"><div></div></div>;
     }
 
     return (

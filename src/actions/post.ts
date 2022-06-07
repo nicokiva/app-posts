@@ -31,6 +31,9 @@ export const fetchPosts = () => {
     return async (dispatch: (arg0: { type: string; payload?: { posts: Post[]; }; }) => void) => {
         dispatch(startGettingPostsAction());
         const posts = await fetchPostsService();
-        dispatch(endGettingPostsAction(posts || []));
+        setTimeout(() => {
+            dispatch(endGettingPostsAction(posts || []));
+        }, 2000)
+        
     };
 };

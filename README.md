@@ -1,3 +1,11 @@
+# Custom notes
+
+### React Starter Kit
+I decided to use Create React App with TypeScript. The reason is that there is no need to do it manually because this library provides everything required for the app.
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
